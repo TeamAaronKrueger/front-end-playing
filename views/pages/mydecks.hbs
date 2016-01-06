@@ -5,14 +5,15 @@ You made it to deck view!!!
 {{/if}}
 
 {{#each decks}}
+<h3>{{Name}}</h3>
 <form action="/editdeck" method="post">
-<input type="hidden" name="Name" value="{{{Name}}}">
-<input type="submit" value="editdeck">Edit This Deck</input>
+<input type="hidden" name="name" value="{{Name}}">
+<input type="submit" value="Edit This Deck"></input>
+</form>
 <div>
-  <h3>{{Name}}</h3>
+
   <p><span class = "bold"> User: </span>{{User}}</p>
   <p><span class="bold"> Public: </span>{{Public}}</p>
 </div>
 
-</form>
 {{/each}}
