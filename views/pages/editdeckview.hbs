@@ -26,21 +26,21 @@
       <tr class="questionCell">
       <h4> Question</h4>
       <form class='cardForm' action="#" method="post">
-        <input id="{{{_id}}}qinput" type="text" name="Question" class="inputBox" placeholder="{{{Question}}}"></input>
-        <p id="{{{_id}}}qtext" class="question">{{Question}}</p>
+        <input id="{{_id}}qinput" type="text" name="Question" class="inputBox" placeholder="{{Question}}"></input>
+        <p id="{{_id}}qtext" class="question">{{Question}}</p>
       </tr>
       <tr class="answerCell">
         <h4> Answer </h4>
-        <input id="{{{_id}}}ainput" type="text" name="Answer" class="inputBox" placeholder="{{{Answer}}}"></input>
-        <p id="{{{_id}}}atext" class="answer">{{Answer}}</p>
+        <input id="{{_id}}ainput" type="text" name="Answer" class="inputBox" placeholder="{{Answer}}"></input>
+        <p id="{{_id}}atext" class="answer">{{Answer}}</p>
       </tr>
       <tr class="editCell">
-          <input type='submit' id="{{{_id}}}save" onclick="renameItem({{{_id}}})" value="Save" class="ui-input-button-hidden"></input>
+          <input type='submit' id="{{_id}}save" onclick="renameItem({{_id}})" value="Save" class="ui-input-button-hidden"></input>
           </form>
-          <button id="{{{_id}}}edit" onclick="editItem({{{_id}}})" class="ui-input-button">Edit</button>
+          <button id="{{_id}}edit" onclick="editItem({{_id}})" class="ui-input-button">Edit</button>
         <form class='buttonForm' action="#" method="post">
-        <input type="hidden" name="id" value="{{{_id}}}"></input>
-        <input type="submit" id="{{{_id}}}delete" value="Delete" class="ui-input-button"></input>
+        <input type="hidden" name="id" value="<%=_id%>"></input>
+        <input type="submit" id="{{_id}}delete" value="Delete" class="ui-input-button"></input>
         </form>
       </tr>
       </table>
