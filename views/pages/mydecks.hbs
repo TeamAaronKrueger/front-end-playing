@@ -4,15 +4,10 @@
 {{/if}}
 
 {{#each decks}}
-<<<<<<< HEAD
-<form action="/" method="post">
-<input type="hidden" name="Name" value="{{Name}}">
-=======
+<div>
 <form action="/editdeck" method="post">
 <input type="hidden" name="Name" value="{{{Name}}}">
-<input type="submit" value="editdeck">Edit This Deck</input>
->>>>>>> 058a4635f86dac7fbc07c40f0f8e57366601057b
-<div>
+<input type="submit" value="editdeck"></input>
   <h3>{{Name}}</h3>
   <p><span class = "bold"> User: </span>{{User}}</p>
   <p><span class="bold"> Public: </span>{{Public}}</p>
