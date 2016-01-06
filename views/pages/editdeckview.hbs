@@ -1,9 +1,28 @@
+<h2> {{currentDeck}} </h2>
+<table>
+  <tr>
+    <th> Question </th>
+    <th> Answer </th>
+  </tr>
+  {{#each cards}}
+  <tr>
+    <td>
+      <form class='cardForm' action="#" method="post">
+        <input id="{{{_id}}}qinput" type="text" name="question" class="inputBox" placeholder="{{{Question}}}"></input>
+        <span id="{{{_id}}}qtext">{{Question}}</span>
+    </td>
+    <td>
+      <input id="{{{_id}}}ainput" type="text" name="answer" class="inputBox" placeholder="{{{Answer}}}"></input>
+      <span id="{{{_id}}}atext">{{Answer}}</span>
+    </td>
+    <td>
+      <input type='submit' id="{{{_id}}}check" onclick="renameItem({{{_id}}})" value="" class="checkButton"></input>
+      </form>
+      <button id="{{{_id}}}edit" onclick="editItem({{{_id}}})" class = "editButton"></button>
+      <form class='buttonForm' action="#" method="post">
+      <input type="submit" id="{{{_id}}}delete" value="" class="deleteButton"></input>
+      </form>
+    </td></tr></table>
 
-<p>Welcome to OUR AWESOMEEEENSSSSSS</p>
-<script type='text/template' id='card-template'>
-<article>
-  <strong>question</strong>: <%=Question %><br>
-</article>
-</script
 
-<div id = "cards"></div>
+  {{/each}}
