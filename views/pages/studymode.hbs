@@ -1,0 +1,17 @@
+You made it to deck view!!!
+
+{{#if message}}
+{{message}}
+{{/if}}
+
+{{#each decks}}
+<form action="/" method="post">
+<input type="hidden" name="Name" value="{{{Name}}}">
+<div>
+  <h3>{{Name}}</h3>
+  <p><span class = "bold"> Question: </span>{{Question}}</p>
+  <p><span class="bold"> Answer: </span>{{Answer}}</p>
+</div>
+
+</form>
+{{/each}}
