@@ -37,16 +37,18 @@ router.get('/mydecks', function(req, res, next) {
 
 router.post('/editdeck', function(req, res, next) {
   console.log(req.body);
+  var currentDeck = req.body.name;
   modelCards.find(function(error, cards){
     if (error) console.log(error);
-    var currentDeck = [];
+    var currentCards = [];
     for (var card in cards) {
       if (cards[card].DeckName == req.body.name) {
-        currentDeck.push(cards[card]);
+        currentCards.push(cards[card]);
       }
     }
     res.render('pages/editdeckview', {
-      cards: currentDeck,
+      cards: currentCards,
+      currentDeck: currentDeck
     });
   });
 });
