@@ -85,7 +85,7 @@ router.get('/publicdecks', function(req, res, next) {
   });
 
 //garbage code
-router.get('/studymode', function(req, res, next) {
+router.post('/studymode', function(req, res, next) {
   model.find(function(error, cards){
       if (error) {
         console.log(error);
