@@ -10,7 +10,7 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 router.get('/', function(req, res) {
-  res.render('/pages/deckview', { user: req.user });
+  res.render('pages/welcome', { user: req.user });
 });
 
 router.get('/register', function(req, res) {
@@ -44,7 +44,7 @@ router.get('/login', function(req, res) {
 router.post('/login',
   passport.authenticate('local', { failureRedirect: '/welcome' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/mydecks');
   }
 );
 

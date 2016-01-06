@@ -11,7 +11,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 require('./db/database');
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var decks = require('./routes/decks');
 var cards = require('./routes/cards');
 var accounts = require('./routes/account')
@@ -49,9 +49,9 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/cards', cards);
-app.use('/decks', decks);
+app.use('/', index);
+app.use('/api/cards', cards);
+app.use('/api/decks', decks);
 app.use('/account', accounts);
 
 // catch 404 and forward to error handler
