@@ -55,10 +55,11 @@ router.get('/editdeck', function(req, res, next) {
 });
 
 router.get('/publicdecks', function(req, res, next) {
-  model.where(function(error, decks){
+  model.find(function(error, decks){
       if (error) {
         console.log(error);
       } else {
+        var currentDecks = [];
         for (var deck in decks) {
           if (decks[deck].Public == true) {
             console.log(decks[deck]);
@@ -81,7 +82,7 @@ router.get('/studymode', function(req, res, next) {
       if (error) {
         console.log(error);
       } else {
-        res.render('pages/decks/:',
+        res.render('pages/decks',
         {
           cards: cards,
           message: "Welcome to " + decks.Name
