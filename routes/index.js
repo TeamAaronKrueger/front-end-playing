@@ -1,22 +1,28 @@
 var express = require('express');
 var router = express.Router();
-var model = require('../models/Card');
+var model = require('../models/Deck');
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var currentDeck = "ChemistryQuiz";
-  model.find(function(err, cards) {
-    res.render('pages/welcome', {
-    cards : cards
-    });
-    });
+
 });
 
-router.get('/deck', function(req, res, next) {
-  var currentDeck = req.params.deck;
-  res.render('pages/deckview', { user: req.user });
-});
+router.get('/mydecks', function(req, res, next) {
+  model.find(function(error, decks){
+      if (error) console.log(error);
+      // var currentDecks = [];
+      // for (var deck in decks) {
+      //   if (deck.Public == false) {
+      //     currentDecks.push(deck);
+      //   }
+      // };
+      // console.log(currentDecks)
+      res.render('pages/decks', {
+        decks: decks,
+        currentUser: req.user});
+      });
+    });
 
 
 

@@ -4,11 +4,7 @@ var model = require('../models/Deck');
 
 /* GET decks listing. */
 router.get('/', function(req, res, next) {
-  model.find(function(error, decks){
-    if (error) console.log(error);
-    //res.json(decks);
-    res.render('pages/decks', {decks: decks})
-  })
+
 });
 
 router.get('/:id', function(req, res, next) {
