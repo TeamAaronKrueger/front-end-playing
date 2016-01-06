@@ -25,7 +25,7 @@ router.get('/mydecks', function(req, res, next) {
             console.log(currentDecks);
           }
         };
-        res.render('pages/decks',
+        res.render('pages/mydecks',
         {
           decks: currentDecks,
           currentUser: req.user,
@@ -67,7 +67,7 @@ router.get('/publicdecks', function(req, res, next) {
             console.log(currentDecks);
           }
         };
-        res.render('pages/decks',
+        res.render('pages/publicdecks',
         {
           decks: currentDecks,
           currentUser: req.user,

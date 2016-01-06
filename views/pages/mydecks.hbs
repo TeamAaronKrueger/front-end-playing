@@ -1,12 +1,11 @@
-You made it to deck view!!!
 
 {{#if message}}
-{{message}}
+<p class = "message">{{message}}</p>
 {{/if}}
 
 {{#each decks}}
 <form action="/" method="post">
-<input type="hidden" name="Name" value="{{{Name}}}">
+<input type="hidden" name="Name" value="{{Name}}">
 <div>
   <h3>{{Name}}</h3>
   <p><span class = "bold"> User: </span>{{User}}</p>
