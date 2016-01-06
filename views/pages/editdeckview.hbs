@@ -1,28 +1,54 @@
 <h2> {{currentDeck}} </h2>
-<table>
-  <tr>
-    <th> Question </th>
-    <th> Answer </th>
-  </tr>
+  <p>
+    <button class="l-ui-input-button">Study Deck</button>
+    <button class="l-ui-input-button" id="editDeck">Edit Deck</button>
+    <button class="l-ui-input-button-hidden" id="addCard">Add Card</button>
+    <form action="/api/decks/:id" method="delete">
+    <input type="submit" class="l-ui-input-button-hidden" id="deleteDeck" value="Delete"></input>
+    </form>
+  </p>
+
+
+  <div class="addCard" id="addCardDiv">
+    <form action="/api/cards" method="post">
+      <input type="hidden" name="DeckName" value="{{{currentDeck}}}">
+      <h4> Question </h4>
+      <input type="text" name="Question" class="inputBoxLarge"></input>
+      <h4> Answer </h4>
+      <input type="text" name="Answer" class="inputBoxLarge"></input>
+      <p><input type="submit" class="ui-input-button" value="Add Card"></input></p>
+    </form>
+  </div>
+
   {{#each cards}}
-  <tr>
-    <td>
+    <div class="cardDisplay">
+      <table>
+      <tr class="questionCell">
+      <h4> Question</h4>
       <form class='cardForm' action="#" method="post">
-        <input id="{{{_id}}}qinput" type="text" name="question" class="inputBox" placeholder="{{{Question}}}"></input>
-        <span id="{{{_id}}}qtext">{{Question}}</span>
-    </td>
-    <td>
-      <input id="{{{_id}}}ainput" type="text" name="answer" class="inputBox" placeholder="{{{Answer}}}"></input>
-      <span id="{{{_id}}}atext">{{Answer}}</span>
-    </td>
-    <td>
-      <input type='submit' id="{{{_id}}}check" onclick="renameItem({{{_id}}})" value="" class="checkButton"></input>
-      </form>
-      <button id="{{{_id}}}edit" onclick="editItem({{{_id}}})" class = "editButton"></button>
-      <form class='buttonForm' action="#" method="post">
-      <input type="submit" id="{{{_id}}}delete" value="" class="deleteButton"></input>
-      </form>
-    </td></tr></table>
+        <input id="{{{_id}}}qinput" type="text" name="Question" class="inputBox" placeholder="{{{Question}}}"></input>
+        <p id="{{{_id}}}qtext" class="question">{{Question}}</p>
+      </tr>
+      <tr class="answerCell">
+        <h4> Answer </h4>
+        <input id="{{{_id}}}ainput" type="text" name="Answer" class="inputBox" placeholder="{{{Answer}}}"></input>
+        <p id="{{{_id}}}atext" class="answer">{{Answer}}</p>
+      </tr>
+      <tr class="editCell">
+          <input type='submit' id="{{{_id}}}save" onclick="renameItem({{{_id}}})" value="Save" class="ui-input-button-hidden"></input>
+          </form>
+          <button id="{{{_id}}}edit" onclick="editItem({{{_id}}})" class="ui-input-button">Edit</button>
+        <form class='buttonForm' action="#" method="post">
+        <input type="hidden" name="id" value="{{{_id}}}"></input>
+        <input type="submit" id="{{{_id}}}delete" value="Delete" class="ui-input-button"></input>
+        </form>
+      </tr>
+      </table>
+
+    </div>
+    <!-- </td></tr>
+  </tbody>
+  </table> -->
 
 
   {{/each}}
