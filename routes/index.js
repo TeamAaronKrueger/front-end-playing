@@ -20,9 +20,9 @@ router.get('/mydecks', function(req, res, next) {
         var currentDecks = [];
         for (var deck in decks) {
           if (decks[deck].User == req.user.username) {
-            console.log(decks[deck]);
+            //console.log(decks[deck]);
             currentDecks.push(decks[deck]);
-            console.log(currentDecks);
+            //console.log(currentDecks);
           }
         };
         res.render('pages/mydecks',
@@ -35,24 +35,31 @@ router.get('/mydecks', function(req, res, next) {
     });
   });
 
-router.get('/editdeck', function(req, res, next) {
-  var currentDeck = "ChemistryQuiz"
+router.post('/editdeck', function(req, res, next) {
+  console.log(req.body);
   modelCards.find(function(error, cards){
     if (error) console.log(error);
-          // var currentCards = [];
-          // for (var card in cards) {
-          //   if (card.DeckName == currentDeck) {
-          //     currentCards.push(card);
-          //   };
-          // };
-          // console.log(currentDecks)
+    var currentDeck = [];
+    for (var card in cards) {
+      if (cards[card].DeckName == req.body.name) {
+        currentDeck.push(cards[card]);
+      }
+    }
     res.render('pages/editdeckview', {
-    cards: cards,
-    currentUser: req.user,
-    currentDeck: currentDeck
+      cards: currentDeck,
     });
   });
 });
+
+// router.get('/editdeck', function(req, res, next) {
+//   console.log(req.params);
+//   modelCards.find(function(error, cards){
+//     if (error) console.log(error);
+//     res.render('pages/editdeckview', {
+//     cards: cards,
+//     });
+//   });
+// });
 
 router.get('/publicdecks', function(req, res, next) {
   model.find(function(error, decks){
@@ -62,9 +69,9 @@ router.get('/publicdecks', function(req, res, next) {
         var currentDecks = [];
         for (var deck in decks) {
           if (decks[deck].Public == true) {
-            console.log(decks[deck]);
+            //console.log(decks[deck]);
             currentDecks.push(decks[deck]);
-            console.log(currentDecks);
+            //console.log(currentDecks);
           }
         };
         res.render('pages/publicdecks',
@@ -77,6 +84,7 @@ router.get('/publicdecks', function(req, res, next) {
     });
   });
 
+//garbage code
 router.get('/studymode', function(req, res, next) {
   model.find(function(error, cards){
       if (error) {

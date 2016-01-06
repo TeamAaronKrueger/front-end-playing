@@ -1,17 +1,12 @@
+You made it to deck view!!!
 
 {{#if message}}
-<p class = "message">{{message}}</p>
+{{message}}
 {{/if}}
 
 {{#each decks}}
-<<<<<<< HEAD
 <form action="/" method="post">
-<input type="hidden" name="Name" value="{{Name}}">
-=======
-<form action="/editdeck" method="post">
 <input type="hidden" name="Name" value="{{{Name}}}">
-<input type="submit" value="editdeck">Edit This Deck</input>
->>>>>>> 058a4635f86dac7fbc07c40f0f8e57366601057b
 <div>
   <h3>{{Name}}</h3>
   <p><span class = "bold"> User: </span>{{User}}</p>
