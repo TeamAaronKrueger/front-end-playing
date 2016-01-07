@@ -1,18 +1,17 @@
+
 function addACard() {
   $("#callTheAjax").click(function(){
-    $.ajax({
+   $.ajax({
       url: '/api/cards',
       type: 'post',
       data: $("#theForm").serialize(),
+      success: function(data){
+        console.log(data);
+      },
+      error: function(err){
+        console.log(err)
+      }
     })
-    .done(function(response) {
-      console.log("success/hello");
-      console.log(response);
-    })
-    .fail(function() {
-      console.log("error");
-    })
-
   })
 }
 

@@ -35,7 +35,7 @@ $(document).ready(function(){
     //
     // };
 
-    var currentDeck = "ChemistryQuiz";
-    console.log("the current deck is "+currentDeck);
+    //var currentDeck = "ChemistryQuiz";
+    //console.log("the current deck is "+currentDeck);
 
 });
