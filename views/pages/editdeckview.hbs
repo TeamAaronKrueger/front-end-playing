@@ -1,4 +1,4 @@
-<h2> {{currentDeck}} </h2>
+<h2> <img class="deckLogo" src="../images/decklogo.svg"/> {{currentDeck}} </h2>
   <p>
     <button class="l-ui-input-button">Study Deck</button>
     <button class="l-ui-input-button" id="editDeck">Edit Deck</button>
@@ -7,7 +7,6 @@
     <input type="submit" class="l-ui-input-button-hidden" id="deleteDeck" value="Delete"></input>
     </form>
   </p>
-
 
   <div class="addCard" id="addCardDiv">
     <form action="/api/cards" method="post">
@@ -39,7 +38,7 @@
           </form>
           <button id="{{_id}}edit" onclick="editItem({{_id}})" class="ui-input-button">Edit</button>
         <form class='buttonForm' action="#" method="post">
-        <input type="hidden" name="id" value="<%=_id%>"></input>
+        <input type="hidden" name="id" value="{{id%}}>"></input>
         <input type="submit" id="{{_id}}delete" value="Delete" class="ui-input-button"></input>
         </form>
       </tr>

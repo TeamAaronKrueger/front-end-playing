@@ -24,6 +24,7 @@ router.post('/', function(req, res, next) {
   model.create(req.body, function(error, card){
     if (error) console.log(error);
     res.json(card);
+    res.redirect('/editdeck'); 
   });
 });
 
