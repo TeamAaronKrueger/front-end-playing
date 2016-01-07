@@ -1,18 +1,19 @@
-
 function addACard() {
-  $("#callTheAjax").click(function(){
+ $("#callTheAjax").click(function(){
    $.ajax({
-      url: '/api/cards',
-      type: 'post',
-      data: $("#theForm").serialize(),
-      success: function(data){
-        console.log(data);
-      },
-      error: function(err){
-        console.log(err)
-      }
-    })
-  })
+     url: '/api/cards',
+     type: 'post',
+     data: $("#theForm").serialize(),
+   })
+   .done(function(response) {
+     console.log("success/hello");
+     console.log(response);
+   })
+   .fail(function() {
+     console.log("error");
+   })
+
+ })
 }
 
 
@@ -44,5 +45,3 @@ $(document).ready(function() {
     })
   });
 });
-
-
