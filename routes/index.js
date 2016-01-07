@@ -29,7 +29,7 @@ router.get('/mydecks', function(req, res, next) {
         {
           decks: currentDecks,
           currentUser: req.user,
-          message: "These are your decks, " + req.user.username
+          message: req.user.username+"'s Decks:"
         });
       };
     });
@@ -96,7 +96,7 @@ router.post('/studydeck', function(req, res, next) {
         currentCards.push(cards[card]);
       }
     }
-    res.render('pages/editdeckview', {
+    res.render('pages/studymode', {
       cards: currentCards,
       currentDeck: currentDeck
     });

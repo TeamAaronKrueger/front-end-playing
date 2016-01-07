@@ -30,6 +30,7 @@ $(document).ready(function() {
     });
   });
 
+
   $( "#addCard").click(function() {
     $( "#addCardDiv").toggle( "fast", function(){
       //animation occured
@@ -38,7 +39,11 @@ $(document).ready(function() {
 
   addACard();
 
-
+  $( ".inputButtonCloseAdd").click(function() {
+    $( "#addCardDiv").toggle( "fast", function(){
+      //animation occured
+    })
+  });
 });
 
 
