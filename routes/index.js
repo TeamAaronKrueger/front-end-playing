@@ -71,9 +71,7 @@ router.get('/publicdecks', function(req, res, next) {
         var currentDecks = [];
         for (var deck in decks) {
           if (decks[deck].Public == true) {
-            //console.log(decks[deck]);
             currentDecks.push(decks[deck]);
-            //console.log(currentDecks);
           }
         };
         res.render('pages/publicdecks',
@@ -86,20 +84,24 @@ router.get('/publicdecks', function(req, res, next) {
     });
   });
 
-//garbage code
-router.post('/studymode', function(req, res, next) {
-  model.find(function(error, cards){
-      if (error) {
-        console.log(error);
-      } else {
-        res.render('pages/decks',
-        {
-          cards: cards,
-          message: "Welcome to " + decks.Name
-        });
-      };
+//study mode code
+router.post('/studydeck', function(req, res, next) {
+    console.log(req.body);
+  var currentDeck = req.body.name;
+  modelCards.find(function(error, cards){
+    if (error) console.log(error);
+    var currentCards = [];
+    for (var card in cards) {
+      if (cards[card].DeckName == req.body.name) {
+        currentCards.push(cards[card]);
+      }
+    }
+    res.render('pages/editdeckview', {
+      cards: currentCards,
+      currentDeck: currentDeck
     });
   });
+});
 
 
 

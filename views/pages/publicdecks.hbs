@@ -16,4 +16,9 @@ You made it to deck view!!!
   <p><span class="bold"> Public: </span>{{Public}}</p>
 </div>
 
+<form action="/studydeck" method="post">
+<input type="hidden" name="name" value="{{Name}}">
+<input type="submit" value="Study This Deck"></input>
+</form>
+
 {{/each}}
