@@ -1,10 +1,10 @@
-<h2> <img class="deckLogo" src="../images/decklogo.svg"/> {{currentDeck}} </h2>
+<h2> <img class="deckLogo" src="../images/decklogoGreen.svg"/> {{currentDeck}} </h2>
   <p>
-    <button class="l-ui-input-button">Study Deck</button>
-    <button class="l-ui-input-button" id="editDeck">Edit Deck</button>
-    <button class="l-ui-input-button-hidden" id="addCard">Add Card</button>
+    <button class="inputButtonLarge">Study Deck</button>
+    <button class="inputButtonLarge" id="editDeck">Edit Deck</button>
+    <button class="inputButtonLargeHidden" id="addCard">Add Card</button>
     <form action="/api/decks/:id" method="delete">
-    <input type="submit" class="l-ui-input-button-hidden" id="deleteDeck" value="Delete"></input>
+    <input type="submit" class="inputButtonLargeHidden" id="deleteDeck" value="Delete"></input>
     </form>
   </p>
 
@@ -15,7 +15,7 @@
       <input type="text" name="Question" class="inputBoxLarge"></input>
       <h4> Answer </h4>
       <input type="text" name="Answer" class="inputBoxLarge"></input>
-      <p><input type="submit" class="ui-input-button" value="Add Card"></input></p>
+      <p><input type="submit" class="inputButton" value="Add Card"></input></p>
     </form>
   </div>
 
@@ -34,12 +34,12 @@
         <p id="{{_id}}atext" class="answer">{{Answer}}</p>
       </tr>
       <tr class="editCell">
-          <input type='submit' id="{{_id}}save" onclick="renameItem({{_id}})" value="Save" class="ui-input-button-hidden"></input>
+          <input type='submit' id="{{_id}}save" onclick="renameItem({{_id}})" value="Save" class="inputButtonHidden"></input>
           </form>
-          <button id="{{_id}}edit" onclick="editItem({{_id}})" class="ui-input-button">Edit</button>
+          <button id="{{_id}}edit" onclick="editItem({{_id}})" class="inputButton">Edit</button>
         <form class='buttonForm' action="#" method="post">
-        <input type="hidden" name="id" value="{{id%}}>"></input>
-        <input type="submit" id="{{_id}}delete" value="Delete" class="ui-input-button"></input>
+        <input type="hidden" name="id" value="{{_id}}>"></input>
+        <input type="submit" id="{{_id}}delete" value="Delete" class="inputButton"></input>
         </form>
       </tr>
       </table>
