@@ -1,9 +1,9 @@
 function addACard() {
- $("#callTheAjax").click(function(){
+ $("#addACard").click(function(){
    $.ajax({
      url: '/api/cards',
      type: 'post',
-     data: $("#theForm").serialize(),
+     data: $("#addCardForm").serialize(),
    })
    .done(function(response) {
      console.log("success/hello");

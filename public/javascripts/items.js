@@ -39,6 +39,7 @@ function editItem (id) {
 
 
   function saveItem (id) {
+
     console.log($("#"+id+"ainput").attr('placeholder'));
     console.log($("#"+id+"qinput").attr('placeholder'));
         var newAnswer;
@@ -55,6 +56,9 @@ function editItem (id) {
             };
 
         console.log($("#"+id+"ainput").val());
+
+
+
 
         $("#"+id+"atext").text(newAnswer);
         $("#"+id+"qtext").text(newQuestion);
@@ -92,3 +96,11 @@ function addItemBtn() {
       });
       console.log ('add item clicked')
     }
+
+
+
+$(document).ready(function() {
+
+});
+
+
