@@ -74,9 +74,9 @@
 
         <!--DELETE CARD-->
         <form action="/editdeck" method="post" id="deleteCardForm">
-        <input type="hidden" name="id" value="{{_id}}" id="deckId"></input>
+        <input type="hidden" name="id" value="{{_id}}"></input>
         <input type="hidden" name="name" value="{{currentDeck}}"></input>
-        <input type="submit" value="delete" class="inputButtonDelete"></input>
+        <button type="submit" value="{{_id}}" class="inputButton deleteButton">Delete</button>
         <!-- <button id="{{_id}}delete" value="{{_id}}" class="inputButtonDelete"></button> -->
         </form>
         </p>
