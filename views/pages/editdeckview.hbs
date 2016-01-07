@@ -1,19 +1,24 @@
 
 <!-- <script src="../javascripts/items.js" type="text/javascript"></script> -->
 
-    <h2>
-      <img class="deckLogo" src="../images/decklogoGreen.svg"/>
-      {{currentDeck}}
-    </h2>
+<h2>
+ <img class="deckLogo" src="../images/decklogoGreen.svg"/>
+ {{currentDeck}}
+</h2>
 
 
   <p>
 
+  <!-- change public or private attribute per each deck
+   -->
     <input type="submit" class="inputButton" id="makePublic" value="Make Public"></input>
     <input type="submit" class="inputButton" id="makePrivate" value="Make Private"></input>
+
+    <!-- delete the deck --- top of the page -->
     <form action="/api/decks/:id" method="delete">
     <input type="submit" class="inputButton" id="deleteDeck" value="Delete"></input>
     </form>
+
     <table><tr><td class="deckButtons">
 
     <form action="/studymode" method="post">
@@ -33,10 +38,8 @@
       <input type="hidden" name="name" value="{{currentDeck}}"></input>
       <input type="hidden" name="DeckName" value="{{{currentDeck}}}"></input>
       <h4> Question </h4>
-      <!--<input type="textarea" name="Question" class="inputBoxLarge"></input> -->
       <p><textarea name="Question" class="inputBoxLarge"></textarea></p>
       <h4> Answer </h4>
-      <!-- <input type="text" name="Answer" class="inputBoxLarge"></input> -->
       <p><textarea name="Answer" class="inputBoxLarge"></textarea></p>
       <span class="inputButton closeAdd">x</span><input type="submit" value="Add Card" class="inputButton"
       id="addACard"></input>
@@ -64,11 +67,12 @@
         <p id="{{_id}}atext" class="answer">{{Answer}}</p>
       </tr>
         <tr class="editCell">
-        <!-- <p><button type="submit" id="{{_id}}save" value="{{_id}}" class="inputButton saveCardButton">Save</button> -->
 
+        <!-- .saveCardButton -->
+        <p><button type="submit" id="{{_id}}save" value="{{_id}}" class="inputButton saveCardButton">Save</button>
 
-        <!-- EDIT CARD -->
-        <!-- <button id="{{_id}}edit" value="{{_id}}" class="inputButton editCardButton">Edit</button> -->
+        <!-- edit button -- no logic necessary -->
+        <button id="{{_id}}edit" value="{{_id}}" class="inputButton editCardButton">Edit</button>
 
 
 
