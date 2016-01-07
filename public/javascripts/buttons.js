@@ -11,7 +11,14 @@ $(document).ready(function() {
       });
     });
 
+
   $( "#addCard").click(function() {
+    $( "#addCardDiv").toggle( "fast", function(){
+      //animation occured
+    })
+  });
+
+  $( ".inputButtonCloseAdd").click(function() {
     $( "#addCardDiv").toggle( "fast", function(){
       //animation occured
     })

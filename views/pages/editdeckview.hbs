@@ -15,21 +15,31 @@
     <input type="submit" class="inputButton" id="deleteDeck" value="Delete"></input>
     </form>
     </form>
+    <table><tr><td class="deckButtons">
 
-    <button class="inputButtonLarge">Study Deck</button>
-    <button class="addCardLogo" id="addCard">⊕</button>
+    <form action="/studymode" method="post">
+      <input type="hidden" name="name" value="{{currentDeck}}"></input>
+      <input type="submit" class="inputButtonLarge" value="Study Deck"></input>
+    </form>
+    </td><td class="deckButtons">
+      <button class="addCardLogo" id="addCard">⊕</button>
+    </td></tr></table>
+
+
 
   </p>
 
   <div class="addCard" id="addCardDiv">
+
     <form action="/api/cards" method="post">
       <input type="hidden" name="DeckName" value="{{{currentDeck}}}">
       <h4> Question </h4>
-      <textarea name="Question" class="inputBoxLarge"></textarea>
+      <p><textarea name="Question" class="inputBoxLarge"></textarea></p>
       <h4> Answer </h4>
-      <textarea name="Answer" class="inputBoxLarge"></textarea>
-      <p><input type="submit" value="Add Card" class="inputButton"></input></p>
-    </form>
+      <p><textarea name="Answer" class="inputBoxLarge"></textarea></p>
+      <span class="inputButtonCloseAdd">x</span><input type="submit" value="Add Card" class="inputButton"></input>
+      </form>
+
 
 
   </div>

@@ -2,7 +2,10 @@
   <img class="deckLogo" src="../images/decklogoGreen.svg"/>
   {{currentDeck}}
 </h2>
-<p><button class="inputButton">Edit Deck</button></p>
+<form action="/editdeck" method="post">
+  <input type="hidden" name="name" value="{{currentDeck}}">
+  <input type="submit" class="inputButton" value="Edit Deck"></input>
+</form>
 
 <div class="editSpinner js-flickity">
   {{#each cards}}

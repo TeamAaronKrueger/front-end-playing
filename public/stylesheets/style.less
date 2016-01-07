@@ -118,7 +118,7 @@ button {
   padding: 5px;
 }
 
-.inputButton, .ui-input-button-save, .inputButtonLarge, .inputButtonLargeHidden, .addCardLogo, .inputButtonSave, .inputButtonEdit, .inputButtonDelete {
+.inputButton, .ui-input-button-save, .inputButtonLarge, .inputButtonLargeHidden, .addCardLogo, .inputButtonSave, .inputButtonEdit, .inputButtonDelete, .inputButtonCloseAdd {
   font-size: 2.5em;
   font-family: 'Orbitron', sans-serif;
   color: @teal;
@@ -140,7 +140,9 @@ button {
     display: none;
 }
 
-
+.inputButtonCloseAdd {
+  width: 3em;
+}
 .message {
   font-size: 3em;
   font-family: 'Orbitron', sans-serif;
@@ -150,15 +152,15 @@ button {
   margin-bottom: 10px;
 }
 
-// .editButton, .checkButton, .deleteButton{
-//   background: none;
-//   background-repeat: no-repeat;
-//   border: none;
-//   box-shadow: none;
-//   width: 4em;
-//   height: 4em;
-// }
 
+.author {
+  font-size: 2.2em;
+  font-family: 'Orbitron', sans-serif;
+  color: #3BB38F;
+  padding: 20px;
+  width: 70%;
+  margin: 0;
+}
 
 .cardDisplay, .addCard {
   border: 4px solid grey;
@@ -212,6 +214,11 @@ td {
   padding: 2em;
 }
 
+.deckButtons {
+  padding: 20px;
+}
+
+
 
 h4 {
   font-size: 2.8em;
@@ -236,6 +243,7 @@ h4 {
   margin-bottom: 10px;
   width: 80%;
 }
+
 .addCardLogo {
   background: url("../images/cardOrange.svg");
   background-repeat: no-repeat;
