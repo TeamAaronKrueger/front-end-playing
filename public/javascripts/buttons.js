@@ -16,6 +16,27 @@ function addACard() {
  })
 }
 
+function deleteACard(){
+  $('.inputButtonDelete').click(function(){
+    var value = $('#deckId').val();
+    $.ajax({
+      url: '/api/cards/'+value,
+      type: 'DELETE',
+      //dataType: 'json',
+      //data: $("#deleteCardForm").serialize()
+    })
+    .done(function() {
+      console.log("success");
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+  })
+}
+
 
 $(document).ready(function() {
 
@@ -38,6 +59,7 @@ $(document).ready(function() {
   });
 
   addACard();
+  deleteACard();
 
   $( ".inputButtonCloseAdd").click(function() {
     $( "#addCardDiv").toggle( "fast", function(){
