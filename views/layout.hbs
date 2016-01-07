@@ -15,7 +15,6 @@
         <div class="headerLogo"><img class="navLogo" src="../images/decklogo.svg"/></div>
         <div class="headerTitle"><h1>Flash Decks</h1></div>
         <div class="headerRight">
-        {{#if user}}
         <div class="headerButtons">
         <button>⇨</button>
         </div>
@@ -23,14 +22,14 @@
         <div class="headerButtons">
         <button>My Decks</button>
         </div>
-        {{else}}
+        {{#unless req.user}}
         <div class="headerButtons">
         <a href="/account/login"><button>Login</button></a>
         </div>
+        {{/unless}}
         <div class="headerButtons">
         <a href="/publicdecks"><button>Public</button></a>
         </div>
-        {{/if}}
         </div>
       </header>
 
