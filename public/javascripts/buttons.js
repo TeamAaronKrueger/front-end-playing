@@ -17,8 +17,8 @@ function addACard() {
 }
 
 function deleteACard(){
-  $('.inputButtonDelete').click(function(){
-    var value = $('#deckId').val();
+  $('.deleteButton').click(function(){
+    var value = this.value;
     $.ajax({
       url: '/api/cards/'+value,
       type: 'DELETE',
