@@ -1,5 +1,5 @@
 
-<script src="../javascripts/items.js" type="text/javascript"></script>
+<!-- <script src="../javascripts/items.js" type="text/javascript"></script> -->
 
     <h2>
       <img class="deckLogo" src="../images/decklogoGreen.svg"/>
@@ -38,7 +38,7 @@
       <h4> Answer </h4>
       <!-- <input type="text" name="Answer" class="inputBoxLarge"></input> -->
       <p><textarea name="Answer" class="inputBoxLarge"></textarea></p>
-      <span class="inputButtonCloseAdd">x</span><input type="submit" value="Add Card" class="inputButton"
+      <span class="inputButton closeAdd">x</span><input type="submit" value="Add Card" class="inputButton"
       id="addACard"></input>
     </form>
   </div>
@@ -53,30 +53,30 @@
       <tr class="questionCell">
       <h4> Question</h4>
 
-        <!-- <input type="hidden" name="DeckName" value="{{currentDeck}}"></input> -->
-        <!-- <textarea id="{{_id}}qinput" type="text" name="Question" class="inputBox" placeholder="{{Question}}"></textarea> -->
+        <input type="hidden" name="DeckName" value="{{currentDeck}}"></input>
+        <textarea id="{{_id}}qinput" type="text" name="Question" class="inputBox" placeholder="{{Question}}"></textarea>
 
         <p id="{{_id}}qtext" class="question">{{Question}}</p>
       </tr>
       <tr class="answerCell">
         <h4> Answer </h4>
-        <!-- <textarea id="{{_id}}ainput" type="text" name="Answer" class="inputBox" placeholder="{{Answer}}"></textarea> -->
+        <textarea id="{{_id}}ainput" type="text" name="Answer" class="inputBox" placeholder="{{Answer}}"></textarea>
         <p id="{{_id}}atext" class="answer">{{Answer}}</p>
       </tr>
-      <tr class="editCell">
-<!--         <p><input type="submit" id="{{_id}}save" value="Save" class="inputButtonSave" onClick="saveItem('{{_id}}')"></input>
- -->
+        <tr class="editCell">
+        <!-- <p><button type="submit" id="{{_id}}save" value="{{_id}}" class="inputButton saveCardButton">Save</button> -->
+
 
         <!-- EDIT CARD -->
-<!--         <button id="{{_id}}edit" value="{{_id}}" class="inputButtonEdit" onClick="editItem('{{_id}}')">Edit</button>
- -->
+        <!-- <button id="{{_id}}edit" value="{{_id}}" class="inputButton editCardButton">Edit</button> -->
+
 
 
         <!--DELETE CARD-->
         <form action="/editdeck" method="post" id="deleteCardForm">
         <input type="hidden" name="id" value="{{_id}}"></input>
         <input type="hidden" name="name" value="{{currentDeck}}"></input>
-        <button id="{{_id}}delete" value="{{_id}}" class="inputButtonDelete">Delete</button>
+        <button id="{{_id}}delete" value="{{_id}}" class="inputButton">Delete</button>
         </form>
         </p>
       </tr>

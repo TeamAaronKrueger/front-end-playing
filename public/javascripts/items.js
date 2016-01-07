@@ -1,4 +1,5 @@
-//write on click function that take in value from each button add id.
+
+
 
 function editItem (id) {
 
@@ -88,19 +89,3 @@ function editItem (id) {
           //animation occured
         });
       };
-
-//add list item button
-function addItemBtn() {
-      $('#add-list-item').show('fast', function() {
-
-      });
-      console.log ('add item clicked')
-    }
-
-
-
-$(document).ready(function() {
-
-});
-
-

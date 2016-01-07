@@ -118,7 +118,7 @@ button {
   padding: 5px;
 }
 
-.inputButton, .ui-input-button-save, .inputButtonLarge, .inputButtonLargeHidden, .addCardLogo, .inputButtonSave, .inputButtonEdit, .inputButtonDelete, .inputButtonCloseAdd {
+.inputButton, .ui-input-button-save,.showAnswerButton, .inputButtonLarge, .inputButtonLargeHidden, .addCardLogo, .inputButtonSave, .inputButtonEdit, .inputButtonDelete, .inputButtonCloseAdd {
   font-size: 2.5em;
   font-family: 'Orbitron', sans-serif;
   color: @teal;
@@ -129,14 +129,14 @@ button {
   margin: 10px;
 }
 
-.inputButtonLarge, .inputButtonLargeHidden, .addCardLogo {
+.inputButtonLarge, .inputButtonLargeHidden, .addCardLogo, {
     border: 3px solid @orange;
     color: @orange;
     font-size: 3em;
 }
 
 
-.inputButtonLargeHidden, .inputButtonHidden, .inputButtonSave {
+.inputButtonLargeHidden, .inputButtonHidden, .saveCardButton {
     display: none;
 }
 
@@ -242,6 +242,7 @@ h4 {
   border-radius: 0.7em;
   margin-bottom: 10px;
   width: 80%;
+  display: none;
 }
 
 .addCardLogo {

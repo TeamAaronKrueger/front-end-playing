@@ -39,9 +39,36 @@ $(document).ready(function() {
 
   addACard();
 
-  $( ".inputButtonCloseAdd").click(function() {
+  $( ".closeAdd").click(function() {
     $( "#addCardDiv").toggle( "fast", function(){
       //animation occured
     })
   });
+
+  $( ".showAnswer" ).click(function() {
+      var id= this.value;
+      console.log(id);
+        $("#"+id+"answer").show( "fast", function(){
+          console.log("showing answer")
+        });
+        $("#"+id+"showAnswer").hide('fast', function() {
+          console.log("")
+        });
+  });
+
+  $( ".editCardButton" ).click(function() {
+      var id= this.value;
+      editItem(id);
+  });
+
+  $( ".saveCardButton" ).click(function() {
+      var id= this.value;
+      saveItem(id);
+  });
+
+
+
+
+
+
 });
