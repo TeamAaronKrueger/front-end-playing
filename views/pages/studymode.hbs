@@ -1,32 +1,25 @@
+<h2>
+  <img class="deckLogo" src="../images/decklogoGreen.svg"/>
+  {{currentDeck}}
+</h2>
+<p><button class="inputButton">Edit Deck</button></p>
+
+<div class="editSpinner js-flickity">
   {{#each cards}}
+    <div class="gallery-cell">
     <div class="cardDisplay">
       <table>
       <tr class="questionCell">
+      <input type="hidden" name="id" value="{{_id}}">
       <h4> Question</h4>
-      <form class='cardForm' action="#" method="post">
-        <input id="{{_id}}qinput" type="text" name="Question" class="inputBox" placeholder="{{Question}}"></input>
-        <p id="{{_id}}qtext" class="question">{{Question}}</p>
+        <p id="{{_id}}question" class="question">{{Question}}</p>
       </tr>
       <tr class="answerCell">
-        <h4> Answer </h4>
-        <input id="{{_id}}ainput" type="text" name="Answer" class="inputBox" placeholder="{{Answer}}"></input>
-        <p id="{{_id}}atext" class="answer">{{Answer}}</p>
-      </tr>
-      <tr class="editCell">
-          <input type='submit' id="{{_id}}save" onclick="renameItem({{_id}})" value="Save" class="ui-input-button-hidden"></input>
-          </form>
-          <button id="{{_id}}edit" onclick="editItem({{_id}})" class="ui-input-button">Edit</button>
-        <form class='buttonForm' action="#" method="post">
-        <input type="hidden" name="id" value="<%=_id%>"></input>
-        <input type="submit" id="{{_id}}delete" value="Delete" class="ui-input-button"></input>
-        </form>
+      <button class="inputButtonLarge" value="{{_id}}" id="{{_id}}showAnswer">Show Answer</button>
+        <p class="answerBox" id="{{_id}}answer"> {{Answer}} </p>
       </tr>
       </table>
-
     </div>
-    <!-- </td></tr>
-  </tbody>
-  </table> -->
-
-
+    </div>
   {{/each}}
+</div>

@@ -4,10 +4,11 @@
     <title></title>
     <link href='https://fonts.googleapis.com/css?family=Orbitron|Indie+Flower' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
-    <!-- <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js'></script>
-    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone.js'></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.2/flickity.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.2/flickity.pkgd.js"></script>
     <script src="/javascripts/app.js" type="text/javascript"></script>
     <script src="/javascripts/buttons.js" type="text/javascript"></script>
+    <script src="/javascripts/items.js" type="text/javascript"></script>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
   </head>
   <body>
@@ -15,7 +16,7 @@
         <div class="headerLogo"><img class="navLogo" src="../images/decklogo.svg"/></div>
         <div class="headerTitle"><h1>Flash Decks</h1></div>
         <div class="headerRight">
-        {{#if user}}
+        {{#if currentUser}}
         <div class="headerButtons">
         <button>⇨</button>
         </div>

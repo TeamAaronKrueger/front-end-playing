@@ -1,52 +1,68 @@
-<h2> <img class="deckLogo" src="../images/decklogoGreen.svg"/> {{currentDeck}} </h2>
+<script src="../javascripts/items.js" type="text/javascript"></script>
+
+    <!-- <a href="/mydecks"><button class="inputButtonLarge">↩ back</button></a> -->
+    <h2>
+      <img class="deckLogo" src="../images/decklogoGreen.svg"/>
+      {{currentDeck}}
+    </h2>
+
+
+
   <p>
+    <form action="/api/decks/:id" method="delete">
+    <input type="submit" class="inputButton" id="makePublic" value="Make Public"></input>
+    <input type="submit" class="inputButton" id="makePrivate" value="Make Private"></input>
+    <input type="submit" class="inputButton" id="deleteDeck" value="Delete"></input>
+    </form>
+    </form>
+
     <button class="inputButtonLarge">Study Deck</button>
     <button class="addCardLogo" id="addCard">⊕</button>
-    <form action="/api/decks/:id" method="delete">
-    <input type="submit" class="inputButtonLarge" id="deleteDeck" value="Delete Deck"></input>
-    </form>
+
   </p>
 
   <div class="addCard" id="addCardDiv">
     <form action="/api/cards" method="post">
       <input type="hidden" name="DeckName" value="{{{currentDeck}}}">
       <h4> Question </h4>
-      <input type="text" name="Question" class="inputBoxLarge"></input>
+      <textarea name="Question" class="inputBoxLarge"></textarea>
       <h4> Answer </h4>
-      <input type="text" name="Answer" class="inputBoxLarge"></input>
-      <p><input type="submit" class="inputButton" value="Add Card"></input></p>
+      <textarea name="Answer" class="inputBoxLarge"></textarea>
+      <p><input type="submit" value="Add Card" class="inputButton"></input></p>
     </form>
+
+
   </div>
 
+  <div class="studySpinner js-flickity">
   {{#each cards}}
+    <div class="gallery-cell">
     <div class="cardDisplay">
       <table>
       <tr class="questionCell">
       <h4> Question</h4>
-      <form class='cardForm' action="#" method="post">
-        <input id="{{_id}}qinput" type="text" name="Question" class="inputBox" placeholder="{{Question}}"></input>
+        <textarea id="{{_id}}qinput" type="text" name="Question" class="inputBox" placeholder="{{Question}}"></textarea>
         <p id="{{_id}}qtext" class="question">{{Question}}</p>
       </tr>
       <tr class="answerCell">
         <h4> Answer </h4>
-        <input id="{{_id}}ainput" type="text" name="Answer" class="inputBox" placeholder="{{Answer}}"></input>
+        <textarea id="{{_id}}ainput" type="text" name="Answer" class="inputBox" placeholder="{{Answer}}"></textarea>
         <p id="{{_id}}atext" class="answer">{{Answer}}</p>
       </tr>
       <tr class="editCell">
-          <input type='submit' id="{{_id}}save" onclick="renameItem({{_id}})" value="Save" class="inputButtonHidden"></input>
-          </form>
-          <button id="{{_id}}edit" onclick="editItem({{_id}})" class="inputButton">Edit</button>
-        <form class='buttonForm' action="#" method="post">
-        <input type="hidden" name="id" value="{{_id}}>"></input>
-        <input type="submit" id="{{_id}}delete" value="Delete" class="inputButton"></input>
-        </form>
+        <p><button id="{{_id}}save" value="{{_id}}" class="inputButtonSave" onClick="saveItem('{{_id}}')">Save</button>
+        <button id="{{_id}}edit" value="{{_id}}" class="inputButtonEdit" onClick="editItem('{{_id}}')">Edit</button>
+        <!-- <form class='buttonForm' action="#" method="post"> -->
+        <input type="hidden" name="id" value="{{_id}}"></input>
+        <button id="{{_id}}delete" value="{{_id}}" class="inputButtonDelete">Delete</button>
+        </p>
+        <!-- </form> -->
       </tr>
       </table>
 
     </div>
-    <!-- </td></tr>
-  </tbody>
-  </table> -->
-
+    </div>
 
   {{/each}}
+
+  </div>
